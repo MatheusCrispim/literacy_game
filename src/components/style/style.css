@@ -1,3 +1,19 @@
 .card{
     width: 300px;
 }
+
+.card-columns {
+    padding: 2rem;
+}
+
+.card-img-top {
+    height: 200px;
+}
+
+.btn{
+    color:white;
+    background-color:#259b4c;
+    border-style: solid;
+    border-color: #259b4c;
+  }
+
