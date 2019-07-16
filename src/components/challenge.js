@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CardB, ButtonB } from './components';
+import { CardB, ButtonB, InputGroupB, FormControlB } from './components';
 
 function Challenge(props){
     let { challenge } = props;
@@ -32,8 +32,16 @@ function Challenge(props){
             <CardB.Img id="card-challenge" variant="top" src={challenge.image} />
             <CardB.Body>
                 <CardB.Text>
-                    <input id="word" className="name" id="word"/> 
-                    <button onClick={match}>Já fiz</button>
+                <InputGroupB className="mb-3">
+                    <FormControlB
+                    placeholder="digite a palavra relacionada a imagem"
+                    aria-label="digite a palavra relacionada a imagem"
+                    aria-describedby="basic-addon2"
+                    />
+                    <InputGroupB.Append>
+                        <ButtonB id="button-confirm" variant="dark" onClick={match}><i class="fa fa-check-square"></i></ButtonB>
+                    </InputGroupB.Append>
+                </InputGroupB>
                 </CardB.Text>
                     {challenge.sound !== null & challenge.sound !== undefined & challenge.sound !== ""?                   
                         <ButtonB variant="dark" onClick={()=>playAudio(challenge.sound)}><i className="fa fa-volume-up" aria-hidden="true"></i></ButtonB>

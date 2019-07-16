@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { ButtonB } from '../../../components/components';
+import { manipulateElementDisplay } from '../../../utils/ui.utils';
 
 import Challenge from '../../../components/challenge';
 
@@ -143,6 +144,23 @@ class GameChallegeContainer extends React.Component{
         }
     }
 
+    backToContexts = ()=>{
+        this.setState({            
+            playing: false,
+            time: 30,
+            end: false,
+            lifes: 3,
+            challenges: [],
+            current:0,
+            score: 0,
+            play:  [...this.props.challenges],
+            challenges: [...this.props.challenges],
+        });
+        manipulateElementDisplay('#challengeGame', 'none');
+        manipulateElementDisplay('#contextSelector', 'block');
+        manipulateElementDisplay('#contextSearch', 'block');
+    }
+
     render(){
         const { challenges, current, play, playing, score, lifes, time, end } = this.state;
         return (
@@ -167,9 +185,16 @@ class GameChallegeContainer extends React.Component{
                                             </div>
                                         </div>
                                     :
-                                    "Parabéns, você venceu"
+                                    <div className="container" id="congratulations">
+                                        <p>Parabéns, você venceu.</p>
+                                        <p>Sua pontuação foi: {score}</p>
+                                        <ButtonB variant="danger" onClick={this.backToContexts}>Voltar</ButtonB>            
+                                    </div>
                                 :
-                                "Não foi dessa vez, tente novamente"
+                                <div className="container" id="not-permission">
+                                    <p>Não foi dessa vez, tente novamente.</p><br></br>
+                                    <ButtonB variant="danger" onClick={this.backToContexts}>Voltar</ButtonB>            
+                                </div>
                             :
                             <div>
                                 <div className="row" id="button-start">
@@ -190,7 +215,14 @@ class GameChallegeContainer extends React.Component{
                             
                             //<button id="button-play" onClick={this.startGame}>Jogar</button>
                         :
-                        "Não há desafios suficientes para jogar neste contexto"
+                        <div className="container" id="not-permission">
+                            <p>Não há desafios suficientes para jogar neste contexto.</p><br></br>
+                            <p>Cadastre um novo contexto em nossa plataforma: <a href="https://app.sisalfa.dcx.ufpb.br">SISALFA</a></p>
+                            <p>ou</p>
+                            <p>Escolha um novo contexto, clique em 'voltar'</p>
+                            <ButtonB variant="danger" onClick={this.backToContexts}>Voltar</ButtonB>            
+                        </div>
+                        
                     }   
                 </div>
         );

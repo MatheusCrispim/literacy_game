@@ -26,3 +26,11 @@
     border-color: #259b4c;
   }
 
+  .btn#button-confirm {
+    margin:0px;
+    color:white;
+    background-color:#259b4c;
+    border-style: solid;
+    border-color: #259b4c;
+  }
+
