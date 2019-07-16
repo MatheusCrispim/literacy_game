@@ -47,3 +47,27 @@
 #container-root{
     margin-top: 3rem;
 }
+
+/*game-challenge-container*/
+#button-start{
+    justify-content: center;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+#button-start button {
+    font-size: 34px;
+}
+
+#instruction {
+    background: #d3d3d340;
+    width: 50%;
+    padding: 2rem;
+    height: auto;
+    text-align: -webkit-center;
+    box-shadow: 1px 1px 4px 0px;
+}
+
+#text-instruction {
+    text-align: left;
+}

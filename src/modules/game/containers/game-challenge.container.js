@@ -172,14 +172,17 @@ class GameChallegeContainer extends React.Component{
                                 "Não foi dessa vez, tente novamente"
                             :
                             <div>
-                                <ButtonB variant="success" onClick={this.startGame}>Jogar</ButtonB>
-                                <div className="container" id="bloco-pontos">
+                                <div className="row" id="button-start">
+                                    <ButtonB variant="success" onClick={this.startGame}>Iniciar</ButtonB>
+                                </div>
+                                <div className="container" id="instruction">
                                     <div>
-                                        <p>
-                                            Instruções do jogo:
-                                            - Você tem até 30 segundos para resolver cada desafio
-                                            - Pode errar até 3 vezes
-                                            - A cada 3 desafios cumpridos você finaliza jogo
+                                        <h6>Instruções do jogo: </h6>
+                                        <p id="text-instruction">
+                                            <br></br>
+                                            - Você tem até 30 segundos para resolver cada desafio<br></br>
+                                            - Pode errar até 3 vezes<br></br>
+                                            - A cada 3 desafios cumpridos você finaliza o jogo
                                         </p>
                                     </div>
                                 </div>
