@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { ButtonB } from '../../../components/components';
 
 import Challenge from '../../../components/challenge';
 
@@ -151,18 +152,40 @@ class GameChallegeContainer extends React.Component{
                             playing ?
                                 lifes > 0?    
                                     !end?
-                                        <div>
-                                            <div>{time} S</div>
-                                            <div>{score} Pontos</div>
-                                            <div>{lifes} Vidas</div>
-                                            <Challenge challenge={ play[current] } match={this.match}/>
+                                        <div id="container-root">
+                                            <div className="row">
+                                                <div className="col">
+                                                    <Challenge challenge={ play[current] } match={this.match}/>
+                                                </div>
+                                                <div className="col">
+                                                    <div className="container" id="bloco-pontos">
+                                                        <div className="row" id="cronometro">{time} S</div>
+                                                        <div className="row" id="pontos">{score} Pontos</div>
+                                                        <div className="row" id="vidas">{lifes} Vidas</div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     :
                                     "Parabéns, você venceu"
                                 :
                                 "Não foi dessa vez, tente novamente"
                             :
-                            <button onClick={this.startGame}>Jogar</button>
+                            <div>
+                                <ButtonB variant="success" onClick={this.startGame}>Jogar</ButtonB>
+                                <div className="container" id="bloco-pontos">
+                                    <div>
+                                        <p>
+                                            Instruções do jogo:
+                                            - Você tem até 30 segundos para resolver cada desafio
+                                            - Pode errar até 3 vezes
+                                            - A cada 3 desafios cumpridos você finaliza jogo
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            //<button id="button-play" onClick={this.startGame}>Jogar</button>
                         :
                         "Não há desafios suficientes para jogar neste contexto"
                     }   

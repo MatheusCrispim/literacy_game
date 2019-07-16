@@ -1,5 +1,6 @@
 .card{
     width: 300px;
+    min-width: 300px;
 }
 
 .card-columns {
@@ -10,7 +11,15 @@
     height: 200px;
 }
 
+.card-img-top#card-challenge{
+    height: 300px;
+}
+.card#card-challenge-one{
+    width: 500px;
+}
+
 .btn{
+    margin:5px;
     color:white;
     background-color:#259b4c;
     border-style: solid;

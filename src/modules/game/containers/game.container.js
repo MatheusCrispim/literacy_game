@@ -60,6 +60,7 @@ class GameContainer extends React.Component{
         this.props.dispatch(getContextChallenges(id));
         
         manipulateElementDisplay('#contextSelector', 'none');
+        manipulateElementDisplay('#contextSearch', 'none');
         manipulateElementDisplay('#challengeGame', 'block');
     }
 
@@ -67,7 +68,7 @@ class GameContainer extends React.Component{
     render(){
         return (
             <div>
-                <input id="contextSearch" onChange={this.searchContext}/>
+                <input id="contextSearch" placeholder="Pesquise algum contexto para jogar" onChange={this.searchContext}/>
                 <div id="contextSelector">
                     <ContextList  contexts={this.state.contexts} selectContext={this.selectContext}/>
                 </div>

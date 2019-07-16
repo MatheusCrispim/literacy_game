@@ -1,0 +1,49 @@
+#contextSearch{
+    width: 275px;
+    margin-top: 20px;
+    margin-left: 30px;
+    border-radius: 10px;
+    border: solid 1px #259b4c;
+    outline: none;
+    padding: 5px;
+}
+
+#cronometro {
+    border-radius: 50%;
+    background-color: rgba(43, 40, 40, 0.26);
+    width: 110px;
+    height: 110px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 5px 0px;
+}
+
+#pontos{
+    background: white;
+    width: 80%;
+    border: solid 1px #8080808c;
+    margin: 2rem;
+}
+
+#vidas{
+    background: white;
+    width: 80%;
+    border: solid 1px #8080808c;
+    margin: 2rem;
+}
+
+#bloco-pontos {
+    background: #d3d3d340;
+    width: 50%;
+    height: 300px;
+    text-align: -webkit-center;
+    box-shadow: 1px 1px 4px 0px;
+}
+
+.col {
+    text-align: -webkit-center;
+}
+
+#container-root{
+    margin-top: 3rem;
+}
